@@ -12,6 +12,7 @@ struct MiddleContentView: View {
 
   var body: some View {
     VStack(spacing: 0) {
+      HitTestView()
       Button(action: {
         string += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
       }, label: {
@@ -31,6 +32,26 @@ struct MiddleContentView: View {
         .padding([.top, .bottom], 40)
     }
     .padding(20)
+  }
+}
+
+private extension MiddleContentView {
+  struct HitTestView: View {
+    var body: some View {
+      ZStack {
+        Button {
+          print(">>> tap Button!!!")
+        } label: {
+          Text("Button")
+        }
+        .frame(width: 100, height: 100)
+        .background(Color.blue)
+        Rectangle()
+          .fill(Color.red.opacity(0.2))
+          .frame(width: 300, height: 300)
+          .allowsHitTesting(false)
+      }
+    }
   }
 }
 
