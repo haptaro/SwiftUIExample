@@ -16,7 +16,8 @@ struct ContentView: View {
           MiddleContentView()
           Footer()
         }
-      }.navigationTitle("Home")
+      }
+      .navigationTitle("Home")
     }
   }
 }

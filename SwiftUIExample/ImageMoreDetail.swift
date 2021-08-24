@@ -14,10 +14,12 @@ struct ImageMoreDetail: View {
     VStack {
       Text("Hello, World!")
       TextField(
-        "placeholder",
-        text: $string,
-        prompt: Text("HIHI")
+        "Placeholder",
+        text: $string
       )
+        .textFieldStyle(.roundedBorder)
+        .font(.title3)
+        .padding([.top, .leading, .trailing], 30)
     }
   }
 }
