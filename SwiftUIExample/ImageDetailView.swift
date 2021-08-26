@@ -10,9 +10,10 @@ import SwiftUI
 struct ImageDetailView: View {
   @State private var isShowHalfSheet = false
   @State private var string = ""
+  @State private var isLoading = false
   
   var body: some View {
-    VStack {
+    VStack(spacing: 30) {
       Text(string)
       NavigationLink {
         ImageMoreDetail(string: $string)
@@ -24,6 +25,21 @@ struct ImageDetailView: View {
       }, label: {
         Text("Present Half sheet!")
       })
+      Button(action: {
+        isLoading.toggle()
+      }, label: {
+        Text("Start/Stop Loading Indicator")
+      })
+      HStack {
+        Spacer()
+        if isLoading {
+          ProgressView()
+        } else {
+          EmptyView()
+        }
+        Spacer()
+      }
+      .background(Color.teal)
     }.halfSheet(showHalfSheet: $isShowHalfSheet) {
       ZStack {
         Color.gray
