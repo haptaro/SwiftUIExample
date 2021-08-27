@@ -9,10 +9,27 @@ import SwiftUI
 
 struct MiddleContentView: View {
   @State private var string = ""
+  @State private var showConfirmationDialog = false
 
   var body: some View {
-    VStack(spacing: 0) {
+    VStack(spacing: 10) {
       HitTestView()
+      Button(action: {
+        showConfirmationDialog.toggle()
+      }, label: {
+        HStack {
+          Spacer()
+          Text("Show ActionSheet")
+            .foregroundColor(Color.white)
+          Spacer()
+        }
+        .frame(height: 45)
+        .background(Color.blue)
+        .cornerRadius(10)
+      })
+        .confirmationDialog("Warning", isPresented: $showConfirmationDialog, titleVisibility: Visibility.visible, actions: {
+          Button("This is ActionSheet", role: ButtonRole.destructive, action: {})
+        })
       Button(action: {
         string += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
       }, label: {
