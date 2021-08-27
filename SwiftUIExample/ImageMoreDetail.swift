@@ -12,16 +12,31 @@ struct ImageMoreDetail: View {
   @State private var showSheet = false
 
   var body: some View {
-    VStack {
-      Text("Hello, World!")
-      TextField(
-        "Placeholder",
-        text: $string
-      )
-        .textFieldStyle(.roundedBorder)
-        .font(.title3)
-        .padding([.top, .leading, .trailing], 30)
-      InputTextFromSheet()
+    ScrollView(showsIndicators: false) {
+      VStack {
+        Text("Hello, World!")
+        TextField(
+          "Placeholder",
+          text: $string
+        )
+          .textFieldStyle(.roundedBorder)
+          .font(.title3)
+          .padding([.top, .leading, .trailing], 30)
+        InputTextFromSheet()
+        VStack {
+          HStack {
+            Text("Left side")
+            Spacer()
+          }
+          Text("Center")
+          HStack {
+            Spacer()
+            Text("Right side")
+          }
+        }
+        .padding()
+        Description()
+      }
     }
   }
 }
@@ -49,6 +64,28 @@ private extension ImageMoreDetail {
       .padding(30)
       .background(Color.gray)
       .cornerRadius(25)
+    }
+  }
+  
+  struct Description: View {
+    var body: some View {
+      VStack() {
+        HStack {
+          Text("Introduce")
+            .font(.title)
+          Spacer()
+        }.padding()
+        Text("hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge")
+          .padding()
+        HStack {
+          Spacer()
+          Text("Created by foo")
+            .font(.caption)
+            .foregroundColor(Color.gray)
+        }
+        .padding()
+      }
+      .padding()
     }
   }
 }
