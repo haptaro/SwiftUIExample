@@ -46,7 +46,6 @@ struct TabPageView: View {
           } label: {
             Text("Close")
           }
-          
         }
       }
       .ignoresSafeArea()

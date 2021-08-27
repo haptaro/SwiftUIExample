@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageDetailView: View {
   @State private var isShowHalfSheet = false
   @State private var isShowTabPageView = false
+  @State private var isShowFourTabView = false
   @State private var string = ""
   @State private var isLoading = false
 
@@ -36,6 +37,11 @@ struct ImageDetailView: View {
       }) {
         Text("ShowTabPageView")
       }
+      Button(action: {
+        isShowFourTabView.toggle()
+      }, label: {
+        Text("FourTabView")
+      })
       HStack {
         Spacer()
         if isLoading {
@@ -50,6 +56,9 @@ struct ImageDetailView: View {
     .sheet(isPresented: $isShowTabPageView, content: {
       TabPageView(isShowTabPageView: $isShowTabPageView)
         .interactiveDismissDisabled(true)
+    })
+    .sheet(isPresented: $isShowFourTabView, content: {
+      FourTabView()
     })
     .halfSheet(showHalfSheet: $isShowHalfSheet) {
       ZStack {
