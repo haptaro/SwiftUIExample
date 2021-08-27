@@ -43,8 +43,39 @@ struct ImageDetailView: View {
     }.halfSheet(showHalfSheet: $isShowHalfSheet) {
       ZStack {
         Color.gray
-        Text("Hi! this is half sheet")
-          .font(.title.bold())
+        VStack {
+          Text("This is half sheet")
+            .font(.title.bold())
+            .padding()
+          Divider()
+            .background(.white)
+          HStack {
+            Button(action: {}, label: {
+              Text("Share")
+            })
+              .background(Color.white)
+              .cornerRadius(10)
+              .frame(width: 45, height: 45)
+              .padding()
+            Spacer()
+            Button(action: {}, label: {
+              Text("Link")
+            })
+              .background(Color.white)
+              .cornerRadius(10)
+              .frame(width: 45, height: 45)
+              .padding()
+            Spacer()
+            Button(action: {}, label: {
+              Text("Report")
+            })
+              .background(Color.white)
+              .cornerRadius(10)
+              .frame(width: 45, height: 45)
+              .padding()
+          }
+          Spacer()
+        }
       }
       .ignoresSafeArea()
     }
