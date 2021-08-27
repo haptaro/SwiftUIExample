@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ImageDetailView: View {
   @State private var isShowHalfSheet = false
+  @State private var isShowTabPageView = false
   @State private var string = ""
   @State private var isLoading = false
-  
+
   var body: some View {
     VStack(spacing: 30) {
       Text(string)
@@ -30,6 +31,11 @@ struct ImageDetailView: View {
       }, label: {
         Text("Start/Stop Loading Indicator")
       })
+      Button(action: {
+        isShowTabPageView.toggle()
+      }) {
+        Text("ShowTabPageView")
+      }
       HStack {
         Spacer()
         if isLoading {
@@ -40,7 +46,12 @@ struct ImageDetailView: View {
         Spacer()
       }
       .background(Color.teal)
-    }.halfSheet(showHalfSheet: $isShowHalfSheet) {
+    }
+    .sheet(isPresented: $isShowTabPageView, content: {
+      TabPageView(isShowTabPageView: $isShowTabPageView)
+        .interactiveDismissDisabled(true)
+    })
+    .halfSheet(showHalfSheet: $isShowHalfSheet) {
       ZStack {
         Color.gray
         VStack {
