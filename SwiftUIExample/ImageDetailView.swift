@@ -66,12 +66,15 @@ struct ImageDetailView: View {
         VStack {
           Text("This is half sheet")
             .font(.title.bold())
-            .padding()
+            .foregroundColor(.white)
+            .padding(40)
           Divider()
             .background(.white)
           HStack {
+            Spacer()
             Button(action: {}, label: {
               Text("Share")
+                .padding(30)
             })
               .background(Color.white)
               .cornerRadius(10)
@@ -80,6 +83,7 @@ struct ImageDetailView: View {
             Spacer()
             Button(action: {}, label: {
               Text("Link")
+                .padding(30)
             })
               .background(Color.white)
               .cornerRadius(10)
@@ -88,12 +92,38 @@ struct ImageDetailView: View {
             Spacer()
             Button(action: {}, label: {
               Text("Report")
+                .padding(30)
             })
               .background(Color.white)
               .cornerRadius(10)
               .frame(width: 45, height: 45)
               .padding()
+            Spacer()
           }
+          Divider()
+            .background(.white)
+          HStack {
+            Text("Title")
+              .font(.title)
+              .padding(.leading, 20)
+            Spacer()
+          }
+          Text("hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge")
+            .padding([.leading, .trailing], 20)
+          Divider()
+            .background(.white)
+          Button(action: {
+            
+          }, label: {
+            Spacer()
+            Text("Lean More")
+              .foregroundColor(Color.white)
+            Spacer()
+          })
+            .frame(height: 45)
+            .background(Color.blue)
+            .cornerRadius(10)
+            .padding(20)
           Spacer()
         }
       }
