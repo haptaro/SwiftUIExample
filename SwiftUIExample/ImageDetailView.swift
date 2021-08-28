@@ -11,6 +11,7 @@ struct ImageDetailView: View {
   @State private var isShowHalfSheet = false
   @State private var isShowTabPageView = false
   @State private var isShowFourTabView = false
+  @State private var isShowLearnMoreView = false
   @State private var string = ""
   @State private var isLoading = false
 
@@ -113,7 +114,7 @@ struct ImageDetailView: View {
           Divider()
             .background(.white)
           Button(action: {
-            
+            isShowLearnMoreView.toggle()
           }, label: {
             Spacer()
             Text("Lean More")
@@ -124,6 +125,9 @@ struct ImageDetailView: View {
             .background(Color.blue)
             .cornerRadius(10)
             .padding(20)
+            .sheet(isPresented: $isShowLearnMoreView) {
+              LeanMoreView()
+            }
           Spacer()
         }
       }

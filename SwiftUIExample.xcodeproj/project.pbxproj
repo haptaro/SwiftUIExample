@@ -24,6 +24,7 @@
 		DBC1D41826D96C7D00B4359A /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41726D96C7D00B4359A /* TabPageView.swift */; };
 		DBC1D41A26D973F200B4359A /* FourTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41926D973F200B4359A /* FourTabView.swift */; };
 		DBC1D41C26D978EF00B4359A /* ExpandingLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41B26D978EF00B4359A /* ExpandingLists.swift */; };
+		DBC1D41E26D9DF4300B4359A /* LeanMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41D26D9DF4300B4359A /* LeanMoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DBC1D41726D96C7D00B4359A /* TabPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
 		DBC1D41926D973F200B4359A /* FourTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTabView.swift; sourceTree = "<group>"; };
 		DBC1D41B26D978EF00B4359A /* ExpandingLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLists.swift; sourceTree = "<group>"; };
+		DBC1D41D26D9DF4300B4359A /* LeanMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanMoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				DBC1D34526D37B6600B4359A /* RowDetailView.swift */,
 				DBC1D34926D385C100B4359A /* Footer.swift */,
 				DBC1D34B26D3861C00B4359A /* ImageDetailView.swift */,
+				DBC1D41D26D9DF4300B4359A /* LeanMoreView.swift */,
 				DBC1D41726D96C7D00B4359A /* TabPageView.swift */,
 				DBC1D41926D973F200B4359A /* FourTabView.swift */,
 				DBC1D34D26D4334A00B4359A /* ImageMoreDetail.swift */,
@@ -297,6 +300,7 @@
 				DBC1D34A26D385C100B4359A /* Footer.swift in Sources */,
 				DBC1D34426D3744400B4359A /* RowView.swift in Sources */,
 				DBC1D41826D96C7D00B4359A /* TabPageView.swift in Sources */,
+				DBC1D41E26D9DF4300B4359A /* LeanMoreView.swift in Sources */,
 				DBC1D34E26D4334A00B4359A /* ImageMoreDetail.swift in Sources */,
 				DBC1D34826D37E9000B4359A /* MiddleContentView.swift in Sources */,
 			);
