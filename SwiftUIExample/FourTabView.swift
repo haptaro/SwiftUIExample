@@ -31,12 +31,34 @@ private extension FourTabView {
   }
   
   struct TwoTab: View {
+    struct ListData: Identifiable {
+      var id = UUID()
+      var name: String
+    }
+    private let listdatas: [ListData] = [
+      .init(name: "a"),
+      .init(name: "b"),
+      .init(name: "c"),
+      .init(name: "d"),
+      .init(name: "e"),
+      .init(name: "f"),
+      .init(name: "g"),
+      .init(name: "h")
+    ]
+    @State private var multiSelection = Set<UUID>()
+    
     var body: some View {
-      Text("Contents1.2")
-        .tabItem {
-          Image(systemName: "1.square.fill")
-          Text("Tab2")
+      VStack {
+        List(listdatas, selection: $multiSelection) { listData in
+          Text(listData.name)
         }
+        Text("selection: \(multiSelection.count)")
+        Spacer()
+      }
+      .tabItem {
+        Image(systemName: "1.square.fill")
+        Text("Tab2")
+      }
     }
   }
   

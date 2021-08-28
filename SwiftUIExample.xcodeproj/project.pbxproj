@@ -23,6 +23,7 @@
 		DBC1D34E26D4334A00B4359A /* ImageMoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D34D26D4334A00B4359A /* ImageMoreDetail.swift */; };
 		DBC1D41826D96C7D00B4359A /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41726D96C7D00B4359A /* TabPageView.swift */; };
 		DBC1D41A26D973F200B4359A /* FourTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41926D973F200B4359A /* FourTabView.swift */; };
+		DBC1D41C26D978EF00B4359A /* ExpandingLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D41B26D978EF00B4359A /* ExpandingLists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		DBC1D34D26D4334A00B4359A /* ImageMoreDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMoreDetail.swift; sourceTree = "<group>"; };
 		DBC1D41726D96C7D00B4359A /* TabPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
 		DBC1D41926D973F200B4359A /* FourTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTabView.swift; sourceTree = "<group>"; };
+		DBC1D41B26D978EF00B4359A /* ExpandingLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				DBC1D31726D3718D00B4359A /* SwiftUIExampleApp.swift */,
 				DBC1D31926D3718D00B4359A /* ContentView.swift */,
+				DBC1D41B26D978EF00B4359A /* ExpandingLists.swift */,
 				DBC1D34726D37E9000B4359A /* MiddleContentView.swift */,
 				DBC1D34126D3739500B4359A /* Header.swift */,
 				DBC1D34326D3744400B4359A /* RowView.swift */,
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC1D41A26D973F200B4359A /* FourTabView.swift in Sources */,
+				DBC1D41C26D978EF00B4359A /* ExpandingLists.swift in Sources */,
 				DBC1D31A26D3718D00B4359A /* ContentView.swift in Sources */,
 				DBC1D34C26D3861C00B4359A /* ImageDetailView.swift in Sources */,
 				DBC1D34226D3739500B4359A /* Header.swift in Sources */,

@@ -20,7 +20,9 @@ struct ContentView: View {
       .navigationTitle("Home")
       .toolbar(content: {
         ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-          NavigationLink(destination: {}, label: {
+          NavigationLink(destination: {
+            ExpandingLists()
+          }, label: {
             Text("Settings")
           })
         }
