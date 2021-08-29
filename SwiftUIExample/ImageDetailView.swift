@@ -12,6 +12,7 @@ struct ImageDetailView: View {
   @State private var isShowTabPageView = false
   @State private var isShowFourTabView = false
   @State private var isShowLearnMoreView = false
+  @State private var isShowShareView = false
   @State private var string = ""
   @State private var isLoading = false
 
@@ -73,7 +74,9 @@ struct ImageDetailView: View {
             .background(.white)
           HStack {
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+              isShowShareView.toggle()
+            }, label: {
               Text("Share")
                 .padding(30)
             })
@@ -127,6 +130,9 @@ struct ImageDetailView: View {
             .padding(20)
             .sheet(isPresented: $isShowLearnMoreView) {
               LeanMoreView()
+            }
+            .sheet(isPresented: $isShowShareView) {
+              ShareView()
             }
           Spacer()
         }

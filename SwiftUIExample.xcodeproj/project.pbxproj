@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB4FB41826DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FB41726DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift */; };
+		DB4FB44226DB5FD00002BF85 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FB44126DB5FD00002BF85 /* ShareView.swift */; };
 		DBC1D31826D3718D00B4359A /* SwiftUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D31726D3718D00B4359A /* SwiftUIExampleApp.swift */; };
 		DBC1D31A26D3718D00B4359A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D31926D3718D00B4359A /* ContentView.swift */; };
 		DBC1D31C26D3718F00B4359A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC1D31B26D3718F00B4359A /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		DB4FB41726DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonTapHighlightButtonStyle.swift; sourceTree = "<group>"; };
+		DB4FB44126DB5FD00002BF85 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		DBC1D31426D3718D00B4359A /* SwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC1D31726D3718D00B4359A /* SwiftUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExampleApp.swift; sourceTree = "<group>"; };
 		DBC1D31926D3718D00B4359A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				DBC1D34526D37B6600B4359A /* RowDetailView.swift */,
 				DBC1D34926D385C100B4359A /* Footer.swift */,
 				DBC1D34B26D3861C00B4359A /* ImageDetailView.swift */,
+				DB4FB44126DB5FD00002BF85 /* ShareView.swift */,
 				DBC1D41D26D9DF4300B4359A /* LeanMoreView.swift */,
 				DBC1D41726D96C7D00B4359A /* TabPageView.swift */,
 				DBC1D41926D973F200B4359A /* FourTabView.swift */,
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4FB44226DB5FD00002BF85 /* ShareView.swift in Sources */,
 				DB4FB41826DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift in Sources */,
 				DBC1D41A26D973F200B4359A /* FourTabView.swift in Sources */,
 				DBC1D41C26D978EF00B4359A /* ExpandingLists.swift in Sources */,
