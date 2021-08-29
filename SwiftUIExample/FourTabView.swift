@@ -22,11 +22,21 @@ struct FourTabView: View {
 private extension FourTabView {
   struct OneTab: View {
     var body: some View {
-      Text("Contents1.1")
-        .tabItem {
-          Image(systemName: "1.square.fill")
-          Text("Tab1")
-        }
+      VStack {
+        Text("""
+          hogehogehogehogehogehogehogehoge
+          foofoofoo
+          fugafugafugafugafugafugafugafugafugafugafugafugafugafugafugafugafugafugafugafuga
+          bar
+        """)
+          .multilineTextAlignment(.center)
+          .padding(.horizontal, 25)
+        Text("Contents1.1")
+      }
+      .tabItem {
+        Image(systemName: "1.square.fill")
+        Text("Tab1")
+      }
     }
   }
   
