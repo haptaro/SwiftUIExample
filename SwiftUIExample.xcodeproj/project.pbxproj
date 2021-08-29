@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB4FB41826DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FB41726DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift */; };
 		DBC1D31826D3718D00B4359A /* SwiftUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D31726D3718D00B4359A /* SwiftUIExampleApp.swift */; };
 		DBC1D31A26D3718D00B4359A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1D31926D3718D00B4359A /* ContentView.swift */; };
 		DBC1D31C26D3718F00B4359A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC1D31B26D3718F00B4359A /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB4FB41726DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonTapHighlightButtonStyle.swift; sourceTree = "<group>"; };
 		DBC1D31426D3718D00B4359A /* SwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC1D31726D3718D00B4359A /* SwiftUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExampleApp.swift; sourceTree = "<group>"; };
 		DBC1D31926D3718D00B4359A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				DBC1D31926D3718D00B4359A /* ContentView.swift */,
 				DBC1D41B26D978EF00B4359A /* ExpandingLists.swift */,
 				DBC1D34726D37E9000B4359A /* MiddleContentView.swift */,
+				DB4FB41726DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift */,
 				DBC1D34126D3739500B4359A /* Header.swift */,
 				DBC1D34326D3744400B4359A /* RowView.swift */,
 				DBC1D34526D37B6600B4359A /* RowDetailView.swift */,
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4FB41826DB1FA70002BF85 /* NonTapHighlightButtonStyle.swift in Sources */,
 				DBC1D41A26D973F200B4359A /* FourTabView.swift in Sources */,
 				DBC1D41C26D978EF00B4359A /* ExpandingLists.swift in Sources */,
 				DBC1D31A26D3718D00B4359A /* ContentView.swift in Sources */,

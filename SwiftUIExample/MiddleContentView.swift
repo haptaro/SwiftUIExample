@@ -24,9 +24,8 @@ struct MiddleContentView: View {
           Spacer()
         }
         .frame(height: 45)
-        .background(Color.blue)
-        .cornerRadius(10)
       })
+        .buttonStyle(.nonTapHighlight)
         .confirmationDialog("Warning", isPresented: $showConfirmationDialog, titleVisibility: Visibility.visible, actions: {
           Button("This is ActionSheet", role: ButtonRole.destructive, action: {})
         })
@@ -40,9 +39,8 @@ struct MiddleContentView: View {
           Spacer()
         }
         .frame(height: 45)
-        .background(Color.blue)
-        .cornerRadius(10)
       })
+        .buttonStyle(.nonTapHighlight)
       Text(string)
         .padding([.trailing, .leading], 20)
         .background(Color.red)
