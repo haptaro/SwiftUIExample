@@ -41,6 +41,7 @@ struct MiddleContentView: View {
         .frame(height: 45)
       })
         .buttonStyle(.nonTapHighlight)
+        .shadow(color: .gray, radius: 10, x: 5, y: 5)
       Text(string)
         .padding([.trailing, .leading], 20)
         .background(Color.red)
