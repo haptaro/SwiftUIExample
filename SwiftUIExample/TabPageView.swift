@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabPageView: View {
-  @Binding var isShowTabPageView: Bool
+  @Binding var sheetKind: SheetKind?
 
   var body: some View {
     TabView {
@@ -42,7 +42,7 @@ struct TabPageView: View {
         VStack {
           Text("Text5")
           Button {
-            isShowTabPageView = false
+            sheetKind = nil
           } label: {
             Text("Close")
           }
@@ -56,6 +56,6 @@ struct TabPageView: View {
 
 struct TabPageView_Previews: PreviewProvider {
   static var previews: some View {
-    TabPageView(isShowTabPageView: .constant(false))
+    TabPageView(sheetKind: .constant(nil))
   }
 }

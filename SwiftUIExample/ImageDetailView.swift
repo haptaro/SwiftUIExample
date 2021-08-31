@@ -7,14 +7,31 @@
 
 import SwiftUI
 
+enum SheetKind: Identifiable {
+  case halfSheet
+  case tabPage
+  case fourTab
+  var id: Int {
+    hashValue
+  }
+}
+
+enum HalfSheetKind: Identifiable {
+  case learnMore
+  case share
+  case link
+  
+  var id: Int {
+    hashValue
+  }
+}
+
 struct ImageDetailView: View {
-  @State private var isShowHalfSheet = false
-  @State private var isShowTabPageView = false
-  @State private var isShowFourTabView = false
-  @State private var isShowLearnMoreView = false
-  @State private var isShowShareView = false
+
   @State private var string = ""
   @State private var isLoading = false
+  @State private var sheetKind: SheetKind? = nil
+  @State private var halfSheetKind: HalfSheetKind? = nil
 
   var body: some View {
     VStack(spacing: 30) {
@@ -25,7 +42,7 @@ struct ImageDetailView: View {
         Text("To More Detail")
       }
       Button(action: {
-        isShowHalfSheet.toggle()
+        sheetKind = .halfSheet
       }, label: {
         Text("Present Half sheet!")
       })
@@ -35,12 +52,12 @@ struct ImageDetailView: View {
         Text("Start/Stop Loading Indicator")
       })
       Button(action: {
-        isShowTabPageView.toggle()
+        sheetKind = .tabPage
       }) {
         Text("ShowTabPageView")
       }
       Button(action: {
-        isShowFourTabView.toggle()
+        sheetKind = .fourTab
       }, label: {
         Text("FourTabView")
       })
@@ -55,14 +72,19 @@ struct ImageDetailView: View {
       }
       .background(Color.teal)
     }
-    .sheet(isPresented: $isShowTabPageView, content: {
-      TabPageView(isShowTabPageView: $isShowTabPageView)
-        .interactiveDismissDisabled(true)
-    })
-    .sheet(isPresented: $isShowFourTabView, content: {
-      FourTabView()
-    })
-    .halfSheet(showHalfSheet: $isShowHalfSheet) {
+    .sheet(item: $sheetKind) { kind in
+      switch kind {
+      case .fourTab:
+        FourTabView()
+      case .halfSheet:
+        Text("")
+          .hidden()
+      case .tabPage:
+        TabPageView(sheetKind: $sheetKind)
+          .interactiveDismissDisabled(true)
+      }
+    }
+    .halfSheet(sheetKind: $sheetKind) {
       ZStack {
         Color.gray
         VStack {
@@ -75,28 +97,29 @@ struct ImageDetailView: View {
           HStack {
             Spacer()
             Button(action: {
-              isShowShareView.toggle()
+              halfSheetKind = .share
             }, label: {
               Text("Share")
-                .padding(30)
             })
               .background(Color.white)
               .cornerRadius(10)
               .frame(width: 45, height: 45)
               .padding()
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+              halfSheetKind = .link
+            }, label: {
               Text("Link")
-                .padding(30)
             })
               .background(Color.white)
               .cornerRadius(10)
               .frame(width: 45, height: 45)
               .padding()
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+              
+            }, label: {
               Text("Report")
-                .padding(30)
             })
               .background(Color.white)
               .cornerRadius(10)
@@ -117,7 +140,7 @@ struct ImageDetailView: View {
           Divider()
             .background(.white)
           Button(action: {
-            isShowLearnMoreView.toggle()
+            halfSheetKind = .learnMore
           }, label: {
             Spacer()
             Text("Lean More")
@@ -128,13 +151,17 @@ struct ImageDetailView: View {
             .background(Color.blue)
             .cornerRadius(10)
             .padding(20)
-            .sheet(isPresented: $isShowLearnMoreView) {
-              LeanMoreView()
-            }
-            .sheet(isPresented: $isShowShareView) {
-              ShareView()
-            }
           Spacer()
+        }
+        .sheet(item: $halfSheetKind) { kind in
+          switch kind {
+          case .link:
+            LinkView(sheetKind: $sheetKind)
+          case .learnMore:
+            LeanMoreView()
+          case .share:
+            ShareView()
+          }
         }
       }
       .ignoresSafeArea()
@@ -148,30 +175,49 @@ struct ImageDetailView_Previews: PreviewProvider {
   }
 }
 
+private extension ImageDetailView {
+  struct LinkView: View {
+    @Binding var sheetKind: SheetKind?
+
+    var body: some View {
+      VStack {
+        Text("link")
+        Button(action: {
+          sheetKind = nil
+        }) {
+          Text("Close")
+        }
+      }
+    }
+  }
+}
+
 extension View {
-  func halfSheet<SheetView: View>(showHalfSheet: Binding<Bool>, @ViewBuilder sheetView: @escaping () -> SheetView) -> some View {
+  func halfSheet<SheetView: View>(sheetKind: Binding<SheetKind?>, @ViewBuilder sheetView: @escaping () -> SheetView) -> some View {
     return self
-      .background(HalfSheetHelper(sheetView: sheetView(), showHalfSheet: showHalfSheet))
+      .background(HalfSheetHelper(sheetView: sheetView(), sheetkind: sheetKind))
   }
 }
 
 struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
   var sheetView: SheetView
   let viewController = UIViewController()
-  @Binding var showHalfSheet: Bool
-  
+  @Binding var sheetkind: SheetKind?
+
   func makeUIViewController(context: Context) -> some UIViewController {
     viewController.view.backgroundColor = .clear
     return viewController
   }
-  
+
   func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-    if showHalfSheet {
-      let sheetController = CustomHostingController(rootView: sheetView)
-      uiViewController.present(sheetController, animated: true) {
-        DispatchQueue.main.async {
-          showHalfSheet.toggle()
-        }
+    guard sheetkind == .halfSheet else {
+      return
+    }
+
+    let sheetController = CustomHostingController(rootView: sheetView)
+    uiViewController.present(sheetController, animated: true) {
+      DispatchQueue.main.async {
+        sheetkind = nil
       }
     }
   }
